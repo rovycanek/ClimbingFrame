@@ -4,11 +4,8 @@ class Element
 private:
 	bool print = true;
 protected:
-	
-
 	//this variable is used for character that is printed to console
 	char visual;
-	Coordinates coordinates;
 
 	//this function removes element from its position
 	void deletePosition();	
@@ -33,5 +30,6 @@ public:
 		int x;
 		int y;
 	};
+	Coordinates coordinates;
 };
 
