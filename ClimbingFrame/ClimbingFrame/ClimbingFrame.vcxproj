@@ -140,11 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClimbingFrame.cpp" />
+    <ClCompile Include="Element.cpp" />
     <ClCompile Include="TimeController.cpp" />
     <ClCompile Include="WindowController.cpp" />
     <ClCompile Include="InputController.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Element.h" />
     <ClInclude Include="TimeController.h" />
     <ClInclude Include="WindowController.h" />
     <ClInclude Include="InputController.h" />

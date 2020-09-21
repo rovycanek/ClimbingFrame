@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include <iostream>
+#include "Element.h"
 
 class WindowController
 {
@@ -19,13 +20,14 @@ private:
 	static void HideCursor();
 
 public:
+
 	//this function sets terminal window to correct size, removes scrollbars and hides cursors
 	static void InitWindow();
 
 	//this function moves cursor in window to x, y coordinates from top left corner 
-	static void SetCursorPosition(int x, int y);
+	static void SetCursorPosition(Element::Coordinates c);
 
 	//this function returns char from terminal window where x and y are coordinates from top left corner 
-	static char ReadFromPosition(int x, int y);
+	static char ReadFromPosition(Element::Coordinates c);
 };
 

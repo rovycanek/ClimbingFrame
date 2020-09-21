@@ -35,20 +35,20 @@ void WindowController::InitWindow()
 	HideCursor();
 }
 
-void WindowController::SetCursorPosition(int x, int y)
+void WindowController::SetCursorPosition(Element::Coordinates c)
 {
 	HANDLE hOut;
 	COORD Position;
 	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	Position.X = x;
-	Position.Y = y;
+	Position.X = c.x;
+	Position.Y = c.y;
 	SetConsoleCursorPosition(hOut, Position);
 }
 
-char WindowController::ReadFromPosition(int x, int y)
+char WindowController::ReadFromPosition(Element::Coordinates c)
 {
 	char buf[1];
-	COORD coord = { x, y };
+	COORD coord = { c.x, c.y };
 	DWORD num_read;
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	if (ReadConsoleOutputCharacter(hConsole, (LPTSTR)buf, (DWORD)1, coord, (LPDWORD)&num_read) == 0) {
