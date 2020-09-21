@@ -7,6 +7,6 @@ void main() {
 	WindowController::InitWindow();
 	while (true) {
 
-		timeControler.wait();
+		timeControler.Wait();
 	}
 }

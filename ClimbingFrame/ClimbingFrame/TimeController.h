@@ -7,13 +7,8 @@ private:
 	int pseudoTime = 0;
 public:
 	//this function stops thread for 40 miliseconds
-	void wait() {
-		Sleep(40);
-		pseudoTime++;
-	}
+	void Wait();
 	//this function returns how many times was wait called
-	int time() {
-		return pseudoTime;
-	}
+	int Time();
 };
 
