@@ -141,15 +141,19 @@
   <ItemGroup>
     <ClCompile Include="ClimbingFrame.cpp" />
     <ClCompile Include="Element.cpp" />
+    <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="TimeController.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="WindowController.cpp" />
     <ClCompile Include="InputController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Element.h" />
+    <ClInclude Include="MapLoader.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="TimeController.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="WindowController.h" />
     <ClInclude Include="InputController.h" />
   </ItemGroup>

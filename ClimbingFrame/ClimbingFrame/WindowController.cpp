@@ -47,10 +47,10 @@ void WindowController::SetCursorPosition(Element::Coordinates c)
 	SetConsoleCursorPosition(hOut, Position);
 }
 
-char WindowController::ReadFromPosition(Element::Coordinates c)
+char WindowController::ReadFromPosition(int x, int y)
 {
-	char buf[1];
-	COORD coord = { c.x, c.y };
+	char buf[5];
+	COORD coord = { x, y };
 	DWORD num_read;
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	if (ReadConsoleOutputCharacter(hConsole, (LPTSTR)buf, (DWORD)1, coord, (LPDWORD)&num_read) == 0) {

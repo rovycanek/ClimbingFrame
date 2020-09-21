@@ -31,5 +31,6 @@ public:
 		int y;
 	};
 	Coordinates coordinates;
+	void action();
 };
 

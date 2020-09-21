@@ -1,6 +1,6 @@
 #pragma once
 #include "Element.h"
-class Player : Element
+class Player : public Element
 {
 	
 private:
@@ -11,45 +11,6 @@ public:
 		coordinates.y = y;
 		visual = '^';
 	}
-	bool move(char key) {
-		switch (key) {
-		case Key::SPACE:
-
-			break;
-		case Key::w:
-			deletePosition();
-			moveUp();
-			visual='^';
-			printElement();
-			break;
-		case Key::s:
-			deletePosition();
-			moveDown();
-			visual = 'v';
-			printElement();
-			
-			break;
-		case Key::d:
-			
-			deletePosition();
-			moveRight();
-			visual = '>';
-			printElement();
-			
-			break;
-		case Key::a:
-			
-			deletePosition();
-			moveLeft();
-			visual = '<';
-			printElement();	
-			break;
-		default: 
-			break;
-
-		}
-		return true;
-	}
-
+	bool Move(char key);
 };
 

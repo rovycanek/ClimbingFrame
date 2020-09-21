@@ -28,6 +28,6 @@ public:
 	static void SetCursorPosition(Element::Coordinates c);
 
 	//this function returns char from terminal window where x and y are coordinates from top left corner 
-	static char ReadFromPosition(Element::Coordinates c);
+	static char ReadFromPosition(int x, int y);
 };
 

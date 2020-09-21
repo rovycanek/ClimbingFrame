@@ -4,8 +4,10 @@
 
 void Element::deletePosition()
 {
-	WindowController::SetCursorPosition(coordinates);
-	std::cout << " ";
+	if (print) {
+		WindowController::SetCursorPosition(coordinates);
+		std::cout << " ";
+	}
 }
 
 void Element::printElement()
@@ -21,12 +23,14 @@ void Element::printElement()
 void Element::moveLeft()
 {
 	print = true;
+	deletePosition();
 	coordinates.x--;
 }
 
 void Element::moveRight()
 {
 	print = true;
+	deletePosition();
 	coordinates.x++;
 
 }
@@ -34,6 +38,7 @@ void Element::moveRight()
 void Element::moveUp()
 {
 	print = true;
+	deletePosition();
 	coordinates.y--;
 
 }
@@ -41,5 +46,12 @@ void Element::moveUp()
 void Element::moveDown()
 {
 	print = true;
+	deletePosition();
 	coordinates.y++;
+}
+
+void Element::action()
+{
+	deletePosition();
+	printElement();
 }
