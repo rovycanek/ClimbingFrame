@@ -21,11 +21,13 @@ void WindowController::RresizeWindow(int right, int down, int width, int height)
 
 void WindowController::HideCursor()
 {
-	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
-	CONSOLE_CURSOR_INFO info;
-	info.dwSize = 100;
-	info.bVisible = TRUE;
-	SetConsoleCursorInfo(consoleHandle, &info);
+	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	CONSOLE_CURSOR_INFO     cursorInfo;
+
+	GetConsoleCursorInfo(out, &cursorInfo);
+	cursorInfo.bVisible = false; // set the cursor visibility
+	SetConsoleCursorInfo(out, &cursorInfo);
 }
 
 void WindowController::InitWindow()
