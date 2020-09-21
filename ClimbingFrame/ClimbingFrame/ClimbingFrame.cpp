@@ -1,11 +1,18 @@
 #include <iostream>
 #include "WindowController.h"
 #include "TimeController.h"
+#include "InputController.h"
 
-void main() {
+int  main() {
 	TimeController timeControler = TimeController();
 	WindowController::InitWindow();
 	while (true) {
+		if (InputController::GetUseInput()) {
+			return 0;
+		}
+
+
+
 
 		timeControler.Wait();
 	}

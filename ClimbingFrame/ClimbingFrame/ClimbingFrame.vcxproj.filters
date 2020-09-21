@@ -24,12 +24,18 @@
     <ClCompile Include="TimeController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InputController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TimeController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
