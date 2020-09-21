@@ -21,7 +21,7 @@
     <ClCompile Include="WindowController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TimeControlled.cpp">
+    <ClCompile Include="TimeController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="WindowController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TimeControlled.h">
+    <ClInclude Include="TimeController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
