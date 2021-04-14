@@ -1,4 +1,5 @@
 #include "WindowController.h"
+#include "./../Types/Coordinates.h"
 
 void WindowController::RemoveScrollbar()
 {
@@ -37,7 +38,7 @@ void WindowController::InitWindow()
 	HideCursor();
 }
 
-void WindowController::SetCursorPosition(Element::Coordinates c)
+void WindowController::SetCursorPosition(Coordinates c)
 {
 	HANDLE hOut;
 	COORD Position;
@@ -47,7 +48,7 @@ void WindowController::SetCursorPosition(Element::Coordinates c)
 	SetConsoleCursorPosition(hOut, Position);
 }
 
-char WindowController::ReadFromPosition(int x, int y)
+char WindowController::ReadFromPosition(SHORT x, SHORT y)
 {
 	char buf[5];
 	COORD coord = { x, y };

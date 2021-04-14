@@ -1,13 +1,11 @@
 #include "Element.h"
 #include <iostream>
-#include "WindowController.h"
+#include "./../Tools/WindowController.h"
 
 void Element::deletePosition()
 {
-	if (print) {
-		WindowController::SetCursorPosition(coordinates);
-		std::cout << " ";
-	}
+	WindowController::SetCursorPosition(coordinates);
+	std::cout << " ";
 }
 
 void Element::printElement()
@@ -17,7 +15,6 @@ void Element::printElement()
 		std::cout << visual;
 	}
 	print = false;
-
 }
 
 void Element::moveLeft()
@@ -50,8 +47,3 @@ void Element::moveDown()
 	coordinates.y++;
 }
 
-void Element::action()
-{
-	deletePosition();
-	printElement();
-}

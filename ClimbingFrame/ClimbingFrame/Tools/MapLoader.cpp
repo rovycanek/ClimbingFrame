@@ -1,10 +1,12 @@
 #include "MapLoader.h"
 #include "WindowController.h"
-#include "Wall.h"
+#include "./../Elements/Wall.h"
+#include "./../Elements/Element_Singleton.h"
 
-int MapLoader::ReturnXsize()
+SHORT MapLoader::ReturnXsize()
 {
-	int x = 0, y = 0, size = 0;
+	SHORT x = 0, y = 0;
+	SHORT size = 0;
 	while (WindowController::ReadFromPosition(x, y) == '#') {
 		size++;
 		x++;
@@ -12,9 +14,10 @@ int MapLoader::ReturnXsize()
 	return size;
 }
 
-int MapLoader::ReturnYsize()
+SHORT MapLoader::ReturnYsize()
 {
-	int x = 0, y = 0, size = 0;
+	SHORT x = 0, y = 0;
+	SHORT size = 0;
 	while (WindowController::ReadFromPosition(x, y) == '#') {
 		size++;
 		y++;
@@ -43,25 +46,20 @@ void MapLoader::PrintMap()
 	std::cout << "###########################################################################################" << std::endl;
 }
 
-
-
-
-
-void MapLoader::LoadMap(std::vector<Element>* elements){
+void MapLoader::LoadMap(){
 
 	PrintMap();
-	int sizeX = ReturnXsize();
-	int sizeY = ReturnYsize();
-	for (short int y = 0; y < sizeY; y++) {
-		for (short int x = 0; x < sizeX; x++) {
+	auto sizeX = ReturnXsize();
+	auto sizeY = ReturnYsize();
+	for (auto y = 0; y < sizeY; y++) {
+		for (auto x = 0; x < sizeX; x++) {
 			switch (WindowController::ReadFromPosition(x, y)) {
 			case '#':
-				elements->push_back(Wall(x,y,'#'));
+				Element_Singleton::getInstance()->getValue()->push_back(new Wall((int)x, (int)y, '#'));
 				break;
 			default:
 				break;
 			}
 		}
 	}
-
 }

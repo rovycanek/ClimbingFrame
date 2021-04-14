@@ -1,7 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include <iostream>
-#include "Element.h"
+#include "./../Types/Coordinates.h"
 
 class WindowController
 {
@@ -25,9 +25,9 @@ public:
 	static void InitWindow();
 
 	//this function moves cursor in window to x, y coordinates from top left corner 
-	static void SetCursorPosition(Element::Coordinates c);
+	static void SetCursorPosition(Coordinates c);
 
 	//this function returns char from terminal window where x and y are coordinates from top left corner 
-	static char ReadFromPosition(int x, int y);
+	static char ReadFromPosition(SHORT x, SHORT y);
 };
 

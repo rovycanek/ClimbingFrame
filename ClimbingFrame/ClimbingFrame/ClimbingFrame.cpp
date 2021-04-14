@@ -1,30 +1,25 @@
 #include <iostream>
 #include <vector>
-#include "WindowController.h"
-#include "TimeController.h"
-#include "InputController.h"
-#include "Element.h"
-#include "Player.h"
-#include "MapLoader.h"
-
+#include "Tools/WindowController.h"
+#include "Tools/TimeController.h"
+#include "Tools/InputController.h"
+#include "Elements/Player.h"
+#include "Tools/MapLoader.h"
+#include "Elements/Player_Singleton.h"
+#include "Elements/Element_Singleton.h"
+#include "Types/Coordinates.h"
 
 int  main() {
 	TimeController timeControler = TimeController();
 	WindowController::InitWindow();
-	Player player = Player(5, 5);
-	std::vector<Element> elements;
-	MapLoader::LoadMap(&elements);
+	Player_Singleton::getInstance()->setValue(new Player(Coordinates{ 5, 5 }));
+	MapLoader::LoadMap();
 
 	while (true) {
-		if (InputController::GetUseInput(&player)) {
+		if (InputController::GetUseInput()) {
 			return 0;
 		}
-		for (Element& element : elements) {
-			element.action();
-		}
-
-
-
+		Element_Singleton::getInstance()->actions();
 		timeControler.Wait();
 	}
 }
