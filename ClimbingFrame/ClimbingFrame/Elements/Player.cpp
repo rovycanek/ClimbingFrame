@@ -14,10 +14,14 @@ bool Player::Move(char key)
 	Element* element = NULL;
 	switch (key) {
 	case Key::SPACE:
-		Element_Singleton::getInstance()->getValue()->push_back(new Bullet(coordinates, direction));
+		element = Element_Singleton::getInstance()->getValue(coordinates + direction);
+		if (element == NULL) {
+			Element_Singleton::getInstance()->getValue()->push_back(new Bullet(coordinates, direction));
+		}
+		
 		break;
 	case Key::w:
-		element = Element_Singleton::getInstance()->getValue(Coordinates{ coordinates.x ,coordinates.y - 1 });
+		element = Element_Singleton::getInstance()->getValue(coordinates + DIRECTION::UP);
 		if (element == NULL) {
 			moveUp();
 		}
@@ -26,7 +30,7 @@ bool Player::Move(char key)
 		printElement();
 		break;
 	case Key::s:
-		element = Element_Singleton::getInstance()->getValue(Coordinates{ coordinates.x ,coordinates.y + 1 });
+		element = Element_Singleton::getInstance()->getValue(coordinates + DIRECTION::DOWN);
 		if (element == NULL) {
 			moveDown();
 		}
@@ -36,7 +40,7 @@ bool Player::Move(char key)
 
 		break;
 	case Key::d:
-		element = Element_Singleton::getInstance()->getValue(Coordinates{ coordinates.x + 1 ,coordinates.y });
+		element = Element_Singleton::getInstance()->getValue(coordinates + DIRECTION::RIGHT);
 		if (element == NULL) {
 			moveRight();
 		}
@@ -46,7 +50,7 @@ bool Player::Move(char key)
 
 		break;
 	case Key::a:
-		element = Element_Singleton::getInstance()->getValue(Coordinates{ coordinates.x - 1 ,coordinates.y });
+		element = Element_Singleton::getInstance()->getValue(coordinates + DIRECTION::LEFT);
 		if (element == NULL) {
 			moveLeft();
 		}

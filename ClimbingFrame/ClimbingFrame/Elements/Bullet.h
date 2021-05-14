@@ -7,10 +7,10 @@ private:
 public:
 	Bullet(Coordinates coords, char dir){
 		direction = dir;
-		coordinates = coords;
+		coordinates = coords + dir;
 		visual = '*';
 	}
-	~Bullet() {
+	~Bullet() override{
 		deletePosition();
 	}
 	

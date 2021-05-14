@@ -152,6 +152,8 @@
     <ClCompile Include="ClimbingFrame.cpp" />
     <ClCompile Include="Elements\Element.cpp" />
     <ClCompile Include="Elements\Element_Singleton.cpp" />
+    <ClCompile Include="Elements\Shooter.cpp" />
+    <ClCompile Include="Tools\Time_Controller_Singleton.cpp" />
     <ClCompile Include="Tools\MapLoader.cpp" />
     <ClCompile Include="Elements\Player.cpp" />
     <ClCompile Include="Elements\Player_Singleton.cpp" />
@@ -162,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Elements\Bullet.h" />
+    <ClInclude Include="Elements\Shooter.h" />
+    <ClInclude Include="Tools\Time_Controller_Singleton.h" />
     <ClInclude Include="Tools\TimeController.h" />
     <ClInclude Include="Types\Coordinates.h" />
     <ClInclude Include="Elements\Element.h" />

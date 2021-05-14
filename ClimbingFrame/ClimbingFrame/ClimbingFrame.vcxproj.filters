@@ -48,6 +48,12 @@
     <ClCompile Include="Tools\TimeController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Elements\Shooter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Time_Controller_Singleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools\WindowController.h">
@@ -81,6 +87,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tools\TimeController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elements\Shooter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Time_Controller_Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

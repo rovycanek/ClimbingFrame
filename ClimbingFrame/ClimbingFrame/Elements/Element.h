@@ -3,8 +3,12 @@
 class Element
 {
 private:
-	bool print = true;
 protected:
+	//this variable is used to check if element was printed on creation
+	bool PrintInitial = true;
+
+	// this variable is used to check if element needs to be printed
+	bool print = true;
 	//this variable is used for character that is printed to console
 	char visual = 'L';
 
